@@ -11,4 +11,5 @@ COPY app ./app
 EXPOSE 8000
 
 # 启动时先运行初始化自检（验证 NumPy 最小二乘可用），再拉起 API 服务
+# 同时提供 /v1/calibrate 与 /v1/edit-plan
 CMD ["sh", "-c", "python -m app.selfcheck && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
