@@ -1,0 +1,7 @@
+services:
+  calibration-api:
+    build: .
+    image: recorder-clock-calibration:latest
+    ports:
+      - "${API_PORT:-8000}:8000"
+    restart: unless-stopped
